@@ -4,7 +4,9 @@
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
-
+"""
+        # এটি একটি base class যা custom user model তৈরি করতে ব্যবহৃত হয়। আপনি যদি AbstractBaseUser ব্যবহার করেন, তাহলে আপনাকে BaseUserManager ব্যবহার করে user creation এর জন্য create_user() এবং create_superuser() মেথড ডিফাইন করতে হবে।
+"""
 class CustomManager(BaseUserManager):
     def create_user(self, email, user_name, password, **extra_fields):
         if not email:
@@ -32,8 +34,9 @@ class CustomManager(BaseUserManager):
             raise ValueError('superuser must be is_verify=true')
         
         return self.create_user(email, user_name, password, **extra_fields)
-
-
+"""
+        # এটি একটি base class যা custom user model তৈরি করতে ব্যবহার করা হয়। এটি ডিফল্ট user model এর মতো password hashing এবং authentication এর জন্য প্রয়োজনীয় মেথড প্রদান করে।
+"""
 class User(AbstractBaseUser, PermissionsMixin):
     USER_TYPE = (
         ('visitor', 'visitor'),
@@ -56,8 +59,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         return str(self.email)
 
 """
-
-
 # backend.py | gmail or username diye login
 """
 from django.contrib.auth.backends import ModelBackend
