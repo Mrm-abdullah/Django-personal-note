@@ -94,3 +94,75 @@ AUTHENTICATION_BACKENDS = ['home.backend.UsernameOrEmail'] # app name, file,
 # messages.success(request, "Profile details updated.")
 # messages.warning(request, "Your account expires in three days.")
 # messages.error(request, "Document deleted.")
+
+
+
+
+# sudu admin account a kicu field add korar jonno
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from django.contrib.auth import get_user, get_user_model
+
+# Custom User model extending AbstractUser
+class CustomUser(AbstractUser):
+    ROLE_CHOICES = [
+        ('super_admin', 'Super Admin'),
+        ('school_admin', 'School Admin'),
+        ('teacher', 'Teacher'),
+        ('student', 'Student'),
+        ('parent', 'Parent'),
+        ('support', 'Support'),
+        ('accountant', 'Accountant'),
+    ]
+
+    email = models.EmailField(unique=True)
+    REQUIRED_FIELDS = ['email']
+    
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    # phone_number = models.CharField(max_length=15, blank=True, null=True)
+    
+    def __str__(self):
+        return self.username
+
+    
+
+# admin.property
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import CustomUser
+
+# Customizing the UserAdmin for CustomUser model
+class CustomUserAdmin(UserAdmin):
+    # Fields to display in the admin list view
+    list_display = ('username', 'email', 'role', 'is_active', 'is_staff', 'is_superuser')
+    
+    # Fields to filter in the admin sidebar
+    list_filter = ('role', 'is_active', 'is_staff', 'is_superuser')
+    
+    # Search functionality for the admin list view
+    search_fields = ('username', 'email', 'role')
+    
+    # Fields to be displayed in the user detail form
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        ('Personal Info', {'fields': ('email', 'first_name', 'last_name')}),
+        ('Role & Permissions', {'fields': ('role', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important Dates', {'fields': ('last_login', 'date_joined')}),
+    )
+    
+    # Fields displayed when adding a new user
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'password1', 'password2', 'role')}
+         ),
+    )
+    
+    # Read-only fields in the admin panel
+    readonly_fields = ('date_joined', 'last_login')
+
+# Register the CustomUser model with the customized admin
+admin.site.register(CustomUser, CustomUserAdmin)
