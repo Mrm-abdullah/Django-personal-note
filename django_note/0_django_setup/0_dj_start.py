@@ -2,8 +2,7 @@
 # create virtual environment in cmd
 """ python -m venv (env name) """
 """ env\Scripts\activate   
-    source  env/bin/activate #linux
-"""
+    source  env/bin/activate #linux """
 
 # active env
 """ cd env, cd Scripts, activate """
