@@ -17,7 +17,7 @@
  """
 # zip file ta etract koro (termi) te
 # passenger_wsgi.py -- k edit koro
-
+ 
 """ 
 from project nam.wsgi import application
 from termi.wsgi import application
@@ -57,16 +57,20 @@ urlpatterns ar vitor upore>
 
 # pip install mysqlclient
 """ 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_database_name',
-        'USER': 'your_mysql_username',
-        'PASSWORD': 'your_mysql_password',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'your_database_name',
+#         'USER': 'your_mysql_username',
+#         'PASSWORD': 'your_mysql_password',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#             'init_command': "SET NAMES 'utf8mb4'",
+#         }
+#     }
+# }
  """
 # domain name dekhanor jonno
 """
