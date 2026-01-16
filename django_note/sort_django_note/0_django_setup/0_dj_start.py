@@ -1,6 +1,7 @@
 # create virtual environment in cmd
 """ python -m venv env """
 """ env\Scripts\activate   """
+""" source env/bin/activate  """  # for linux and mac
 
 #Install, uninstall and setup and cheack (Django) (env directory)
 """ 
