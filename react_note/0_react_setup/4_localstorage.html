@@ -1,0 +1,32 @@
+<!-- js file -->
+
+<!-- 
+const getCartFormLocalStorage = () => {
+    const storeCArtString = localStorage.getItem('cart');
+
+    if (storeCArtString) {
+        const storedCart = JSON.parse(storeCArtString)
+        return storedCart;
+    }
+    return [];
+}
+
+const saveCartToLocalStorage = (cart) => {
+    const cartStringified = JSON.stringify(cart);
+    localStorage.setItem('cart', cartStringified)
+}
+
+
+const addItemToCartLocalStorage = (id) => {
+    const cart = getCartFormLocalStorage();
+    const newCart = [...cart, id]
+    saveCartToLocalStorage(newCart);
+}
+
+const removeCartFormLocalStorage = (id) => {
+    const storeCart = getCartFormLocalStorage();
+    const remainingCart = storeCart.filter((storeId) => storeId !== id);
+    saveCartToLocalStorage(remainingCart)
+}
+export {getCartFormLocalStorage, addItemToCartLocalStorage, removeCartFormLocalStorage}
+-->

@@ -1,0 +1,52 @@
+<!-- const countryPromise = fetch('https://openapi.programming-hero.com/api/all')
+  .then(res => res.json()) -->  
+
+<!-- <>
+    <Suspense fallback={<p>nadir ar vai biye korbe akta ...</p>}>
+    <Countries countryPromise={countryPromise}></Countries>
+    </Suspense>
+</> -->
+
+<!-- 
+const Countries = ({countryPromise}) => {
+    const countriesData = use(countryPromise)
+    const countries = countriesData.countries
+    console.log(countries)
+    return (
+        <div>
+            <h1>Countries {countries.length}</h1>
+            {
+                countries.map(country => <Country key={country.cca3.cca3} country={country}></Country>)
+            }
+        </div>
+    );
+};
+ -->
+
+<!-- 
+const Country = ({country}) => {
+
+    const {name, flags} = country
+    return (
+        <div>
+            <img src={flags?.flags?.png} alt="" srcSet="" />
+            Name: {name.common}
+        </div>
+    );
+}; 
+-->
+
+
+
+<!------------------------- json data load -------------------------------->
+<!-- -------------------------------------------------------------------- -->
+
+<!-- 
+[
+    {"id":1,"name":"Eco Stainless Steel Bottle","brand":"EcoPure","material":"Stainless Steel","capacity_ml":750,"color":"Silver","insulated":true,"price":850,"currency":"BDT","in_stock":true,"rating":4.6}
+    {"id":2,"name":"Aqua Plastic Sports Bottle","brand":"AquaFit","material":"BPA-Free Plastic","capacity_ml":1000,"color":"Blue","insulated":false,"price":350,"currency":"BDT","in_stock":true,"rating":4.2}
+    {"id":3,"name":"Thermo Vacuum Flask","brand":"ThermoPro","material":"Stainless Steel","capacity_ml":500,"color":"Black","insulated":true,"price":1200,"currency":"BDT","in_stock":false,"rating":4.8}
+    {"id":4,"name":"Glass Water Bottle","brand":"PureGlass","material":"Borosilicate Glass","capacity_ml":600,"color":"Transparent","insulated":false,"price":650,"currency":"BDT","in_stock":true,"rating":4.4}
+    {"id":5,"name":"Kids Cartoon Bottle","brand":"HappyKids","material":"Plastic","capacity_ml":450,"color":"Pink","insulated":false,"price":400,"currency":"BDT","in_stock":true,"rating":4.1}
+]
+-->

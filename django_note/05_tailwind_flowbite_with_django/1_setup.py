@@ -26,7 +26,7 @@ python -m pip install django-compressor
 
 INSTALLED_APPS = [
     ...
-    'flowbiteapp',  # new
+    'compressor',  # new
 ]
 
 static
