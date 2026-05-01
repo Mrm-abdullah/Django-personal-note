@@ -1,22 +1,50 @@
-<!-- rower dom -->
-https://reactrouter.com/6.28.2/start/tutorial#setup
-
-<!-- install and setup -->
-https://tailwindcss.com/docs/installation/using-vite
-
-<!-- daysy ui -->
-https://v5.daisyui.com/docs/install/
-<!--  -->
-<!--  -->
-https://v5.daisyui.com/docs/install/vite/
-
-
 <!-- Start that -->
-npm create vite@latest projectname -- --template react
-cd projectname
+npm create vite@latest projectName -- --template react
+cd projectName
 npm install
+
+
+<!-- react and daisy ui react-toastify -->
+https://tailwindcss.com/docs/installation/using-vite
+https://daisyui.com/docs/install/
+https://www.npmjs.com/package/react-toastify
+
+<!-- rower dom -->
+https://reactrouter.com/start/data/installation
+
+<!-- context -->
+https://react.dev/reference/react/createContext#reference
+    <!-- create -->
+    import { createContext } from 'react';
+   export const ThemeContext = createContext('light');
+
+    <ThemeContext.Provider value={theme}>
+      <Page />
+    </ThemeContext.Provider>
+
+    <!-- get and use -->
+    import { ThemeContext } from "~/context";
+    const theme = useContext(ThemeContext);
+
 
 npm install tailwindcss @tailwindcss/vite react-router-dom localforage match-sorter sort-by
 npm i -D daisyui@beta
 
 npm run dev
+
+
+
+pages
+components
+Routes
+Utility
+  .js
+
+
+
+
+netlify.toml
+    [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
