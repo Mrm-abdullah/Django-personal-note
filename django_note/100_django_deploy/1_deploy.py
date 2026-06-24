@@ -1,7 +1,7 @@
 # project a commend calao
 """ pip freeze>requirements.txt """
 
-# py manage.py collectstatic
+# python manage.py collectstatic
 
 # all file zip koro
 # c panel a jao --- poyojone subdomain create koro
@@ -40,6 +40,7 @@ app restart korun
 """ 
 
 """
+from django.conf import settings
 from django.urls import re_path as url
 from django.views.static import serve
 
@@ -56,6 +57,7 @@ urlpatterns ar vitor upore>
 ######################################################
 
 # pip install mysqlclient
+# pip install PyMySQL
 """ 
 # DATABASES = {
 #     'default': {
